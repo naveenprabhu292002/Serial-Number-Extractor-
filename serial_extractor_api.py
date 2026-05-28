@@ -5,9 +5,13 @@ import os
 import re
 import io
 from PIL import Image
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # ─── Configuration ─────────────────────────────────────────────────────────────
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyCHerBcSitzkdjWFdeWJ9SDnQ2N7cxqU8A")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 genai.configure(api_key=GEMINI_API_KEY)
 
 app = FastAPI(title="Serial Number Extractor", version="1.0.0")
